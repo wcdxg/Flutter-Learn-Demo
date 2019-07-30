@@ -1,7 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -31,10 +31,17 @@ class RandomWordsState extends State<RandomWords> {
   //创建字体样式 设置大小
   final _biggerFont = const TextStyle(fontSize: 18.0);
 
+  void _pushSaved() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Startup Name Generator')),
+      appBar: AppBar(
+        title: Text('Startup Name Generator'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved)
+        ],
+      ),
       body: _buildSuggestions(),
     );
   }
@@ -76,6 +83,8 @@ class RandomWordsState extends State<RandomWords> {
         color: alreadySaved ? Colors.red : null,
       ),
       onTap: () {
+        //在Flutter的响应式风格的框架中，
+        //调用setState() 会为State对象触发build()方法，从而导致对UI的更新
         setState(() {
           if (alreadySaved) {
             _saved.remove(pair);
