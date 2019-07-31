@@ -13,11 +13,22 @@ class MyApp extends StatelessWidget {
               'http://b-ssl.duitang.com/uploads/item/201801/25/20180125173013_sveub.jpg'),
           radius: 100,
         ),
-        Container(
-          decoration: BoxDecoration(color: Colors.lightBlue),
-          padding: EdgeInsets.all(5),
+        //定位 相对于容器
+        Positioned(
+          top: 10,
+          left: 10,
           child: Text('Hello Flutter'),
         ),
+        Positioned(
+          bottom: 10,
+          right: 10,
+          child: Text('Hello Kotlin'),
+        ),
+        //        Container(
+//          decoration: BoxDecoration(color: Colors.lightBlue),
+//          padding: EdgeInsets.all(5),
+//          child: Text('Hello Flutter'),
+//        ),
       ],
     );
     return MaterialApp(
