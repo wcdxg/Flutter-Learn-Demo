@@ -23,14 +23,14 @@ class Address extends StatelessWidget {
               }),
         ));
   }
+}
 
-  //异步请求  获取到结果之后返回
-  _navigateToAddress(BuildContext context) async {
-    final result = await Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ChooseAddress()));
+//异步请求  获取到结果之后返回
+_navigateToAddress(BuildContext context) async {
+  final result = await Navigator.push(
+      context, MaterialPageRoute(builder: (context) => ChooseAddress()));
 
-    Scaffold.of(context).showSnackBar(SnackBar(content: Text(result)));
-  }
+  Scaffold.of(context).showSnackBar(SnackBar(content: Text(result)));
 }
 
 class ChooseAddress extends StatelessWidget {
