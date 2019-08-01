@@ -1,4 +1,4 @@
-# first_flutter_app
+# Flutter Learn Demo
 
 A new Flutter application.
 
